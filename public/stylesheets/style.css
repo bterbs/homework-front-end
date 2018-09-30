@@ -1,10 +1,14 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #E5E9E;
+}
+.eaze-blue {
+  color: rgb(0, 170, 231);
 }
 
-a {
-  color: #00B7FF;
+nav.navbar {
+  box-shadow: 1px 1px 10px;
+  border-radius: 0px;
+  background-color: #2E282A;
 }
 
 #logo-navbar {
@@ -14,4 +18,17 @@ a {
 #search-navbar {
   margin-top: 1%;
   float: right;
+}
+@media screen and (max-width: 767px){
+  #logo-navbar {
+    float: left;
+  }
+  #search-navbar input {
+    float: right;
+    margin-top: 4%;
+    max-width: 130px;
+  }
+  #search-navbar button {
+    display: none;
+  }
 }

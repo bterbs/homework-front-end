@@ -1,6 +1,7 @@
 body {
   background: #E5E9E;
 }
+
 .eaze-blue {
   color: rgb(0, 170, 231);
 }
@@ -9,16 +10,27 @@ nav.navbar {
   box-shadow: 1px 1px 10px;
   border-radius: 0px;
   background-color: #2E282A;
+  padding-right: 1%;
 }
 
 #logo-navbar {
   font-size: 2.5em;
+  background: -webkit-linear-gradient(rgb(0, 170, 231), #7acfef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #search-navbar {
   margin-top: 1%;
   float: right;
+  margin-right: 2%;
 }
+div.section-title {
+  text-align: center;
+  font: 1.3em;
+}
+
+/* Mobile */
 @media screen and (max-width: 767px){
   #logo-navbar {
     float: left;
@@ -30,5 +42,11 @@ nav.navbar {
   }
   #search-navbar button {
     display: none;
+  }
+  .list-item {
+    text-align: center;
+  }
+  .list-item img {
+    width: 350px;
   }
 }

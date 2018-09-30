@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+#logo-navbar {
+  font-size: 2.5em;
+}
+
+#search-navbar {
+  margin-top: 1%;
+  float: right;
+}

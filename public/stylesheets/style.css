@@ -1,3 +1,4 @@
+/* CUSTOM CSS */
 body {
   background: #E5E9E;
 }
@@ -25,9 +26,23 @@ nav.navbar {
   float: right;
   margin-right: 2%;
 }
+
 div.section-title {
   text-align: center;
-  font: 1.3em;
+  font-size: 1.3em;
+}
+div.list-item {
+  margin-bottom: 4%;
+  display: flex;
+}
+
+div.section-gif-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 99%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Mobile */
@@ -43,10 +58,32 @@ div.section-title {
   #search-navbar button {
     display: none;
   }
+  .mobile-full {
+    width: 100%;
+  }
   .list-item {
     text-align: center;
   }
-  .list-item img {
-    width: 350px;
+}
+
+/* TABLET */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .tablet-half {
+    width: 50%;
+    text-align: center;
+  }
+  div.list-item {
+    display: block;
+  }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1024px) {
+  .desktop-third {
+    width: 300px;
+    margin-left: 1%;
+    margin-right: 1%;
+    height: auto;
+    text-align: center;
   }
 }

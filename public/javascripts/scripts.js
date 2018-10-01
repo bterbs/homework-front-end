@@ -1,6 +1,6 @@
 function getGifs(){
   $.ajax({
-    url: "http://api.giphy.com/v1/gifs/search?q=silicon+valley&api_key=M2YPfZZz3lcvmxGykVK0ezr9ovXmQXzp&limit=5",
+    url: "http://api.giphy.com/v1/gifs/search?q=silicon+valley&api_key=M2YPfZZz3lcvmxGykVK0ezr9ovXmQXzp&limit=25",
     dataType: 'json'
   })
   .done(function(results) {
@@ -10,8 +10,10 @@ function getGifs(){
       const gifUrl = gif.images.fixed_height.url
       gifNodes.push(
             $(`
-              <div class="list-item">
-              <img src=${gifUrl}>
+              <div class="desktop-third tablet-half">
+                <div class="list-item">
+                  <img src=${gifUrl} class="desktop-third mobile-full">
+                </div>
               </div>`)
           );
         });

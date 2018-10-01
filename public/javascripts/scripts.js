@@ -28,3 +28,11 @@ $(function(){
   console.log('Document ready - scripts are firing!')
   getGifs();
 })
+
+// When the user scrolls the page to the bottom, load new GIFs automatically. //
+$(window).scroll(function() {
+    if($(window).scrollTop() == $(document).height() - $(window).height()) {
+      console.log('Getting more gifs!');
+      getGifs()
+    }
+});

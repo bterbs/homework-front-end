@@ -13,7 +13,7 @@ $(function(){
 // FUNCTION TO RETRIEVE GIFS //
 function getGifs(){
   $.ajax({
-    url: "http://api.giphy.com/v1/gifs/search?q=silicon+valley&api_key=M2YPfZZz3lcvmxGykVK0ezr9ovXmQXzp&limit=25",
+    url: "http://api.giphy.com/v1/gifs/trending?api_key=M2YPfZZz3lcvmxGykVK0ezr9ovXmQXzp",
     dataType: 'json'
   })
   .done(function(results) {

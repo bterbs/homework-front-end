@@ -44,7 +44,16 @@ div.section-gif-display {
   margin-left: auto;
   margin-right: auto;
 }
-
+.d-none {
+  visibility: hidden;
+}
+.gif-info {
+  color: black;
+  display: block;
+  position: relative;
+  height: 200px;
+  padding-top: 10%;
+}
 /* Mobile */
 @media screen and (max-width: 767px){
   #logo-navbar {

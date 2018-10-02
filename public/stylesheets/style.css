@@ -13,6 +13,9 @@ nav.navbar {
   border-radius: 0px;
   background-color: #2E282A;
   padding-right: 1%;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 #logo-navbar {
@@ -29,9 +32,19 @@ nav.navbar {
 }
 
 /* MAIN SECTION */
+div.main-content {
+  margin-top: 65px;
+}
 div.section-title {
   text-align: center;
   font-size: 1.3em;
+  margin-bottom: .5em;
+}
+.section-title p {
+  margin-bottom: 0;
+}
+#subtitle-2 {
+  font-size: .8em;
 }
 div.list-item {
   margin-bottom: 4%;

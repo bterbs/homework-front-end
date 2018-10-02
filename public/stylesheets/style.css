@@ -3,6 +3,7 @@ body {
   overflow-x: hidden;
 }
 
+/* NAVBAR */
 .eaze-blue {
   color: rgb(0, 170, 231);
 }
@@ -27,6 +28,7 @@ nav.navbar {
   margin-right: 2%;
 }
 
+/* MAIN SECTION */
 div.section-title {
   text-align: center;
   font-size: 1.3em;

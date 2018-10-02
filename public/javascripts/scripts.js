@@ -118,8 +118,11 @@ function searchGifs(formTerm) {
 }
 
 // When the user scrolls the page to the bottom, load new GIFs automatically. //
+var counter = 0
 $(window).scroll(function() {
     if($(window).scrollTop() + $(window).height() >= $(document).height()) {
-      getGifs(25)
+      counter += 1;
+      getGifs((25*counter))
+      console.log('counter equals', counter)
     }
 });

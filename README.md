@@ -1,10 +1,21 @@
+# INSTRUCTIONS FOR USE
+
+These instructions will get a copy of the project up and running on your local machine for development and testing purposes.
+
+1. Clone or fork git repo `$ git clone https://github.com/bterbs/homework-front-end.git`
+2. cd into new project directory
+3. Install your dependencies: `$ npm install`
+4. Run the server: `$ npm run start`
+5. Log on to [http://localhost:3000](http://localhost:3000) to access the client front end. The Express server will be running on port 3000.
+
+
 # Eaze Front End Homework
 
 Front End coding challenge.
 
 ## Project
 
-We would like you to build a web app that displays the trending GIFs on [Giphy](https://giphy.com/). 
+We would like you to build a web app that displays the trending GIFs on [Giphy](https://giphy.com/).
 Users visiting the website should be able to search for GIFs and see a list of results. The user should be able to expand a GIF and see its details (username, rating, anything you think could be relevant).
 
 Users should have a good user experience on desktop, tablet and mobile devices.
@@ -38,7 +49,7 @@ Please, don't open a PR against this repo. Just follow the direction from the re
 
 ### Coding at Eaze
 
-At [Eaze](https://www.eaze.com) we strive for writing simple, maintainable and clean code. 
+At [Eaze](https://www.eaze.com) we strive for writing simple, maintainable and clean code.
 
 We prefer simplicity over complexity.
 

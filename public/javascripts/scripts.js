@@ -1,6 +1,6 @@
 // DOCUMENT LOAD //
 $(function(){
-  console.log('Document ready - scripts are firing!')
+  console.log('Document ready!')
   getGifs(0);
 
   $('#button-search').on('click', () => {
@@ -11,7 +11,7 @@ $(function(){
 
 })
 
-// FUNCTION TO RETRIEVE GIFS //
+// FUNCTION TO RETRIEVE TRENDING GIFS //
 function getGifs(offset){
   $.ajax({
     url: `http://api.giphy.com/v1/gifs/trending?api_key=M2YPfZZz3lcvmxGykVK0ezr9ovXmQXzp&offset=${offset}`,
@@ -23,6 +23,7 @@ function getGifs(offset){
     results.data.forEach(gif => {
       const gifUrl = gif.images.fixed_height.url;
       const gifSource = gif.url;
+      const gifId= gif.id;
       const gifUser = gif.username;
       const gifRating = gif.rating;
       gifNodes.push(
@@ -30,6 +31,7 @@ function getGifs(offset){
               <div class="desktop-third tablet-half">
                 <div class="list-item" style="background: url(${gifUrl}); background-size: cover;" class="desktop-third tablet-half mobile-full">
                   <div class="d-none gif-info">
+                    <p>Gif ID: ${gifId} </p>
                     <p>Rating: ${gifRating} </p>
                     <p>Link: ${gifSource} </p>
                     <p>Uploaded By: ${gifUser} </p>
@@ -38,7 +40,7 @@ function getGifs(offset){
               </div>`)
           );
         });
-
+      // Add eventHandlers for dynamically added elements //
         gifNodes.forEach(node => {
           $('.section-gif-display').append(node);
           $(node).on('click', () => {
@@ -75,6 +77,7 @@ function searchGifs(formTerm) {
     results.data.forEach(gif => {
       const gifUrl = gif.images.fixed_height.url
       const gifSource = gif.url;
+      const gifId= gif.id;
       const gifUser = gif.username;
       const gifRating = gif.rating;
       gifNodes.push(
@@ -82,6 +85,7 @@ function searchGifs(formTerm) {
               <div class="desktop-third tablet-half">
                 <div class="list-item" style="background: url(${gifUrl}); background-size: cover;" class="desktop-third tablet-half mobile-full">
                   <div class="d-none gif-info">
+                    <p>Gif ID: ${gifId} </p>
                     <p>Rating: ${gifRating} </p>
                     <p>Link: ${gifSource} </p>
                     <p>Uploaded By: ${gifUser} </p>
@@ -93,6 +97,7 @@ function searchGifs(formTerm) {
 
         $('.section-gif-display').empty();
 
+      // Add eventHandlers for dynamically added elements //
         gifNodes.forEach(node => {
           $('.section-gif-display').append(node);
           $('.section-gif-display').append(node);
@@ -107,17 +112,17 @@ function searchGifs(formTerm) {
               $('.d-none').css('visibility','hidden');
             }
 
-            if ( $($thisGifInfo).css('background') == 'rgb(114, 140, 140, .8)') {
-              $($thisGifInfo).css('background', 'rgb(114, 140, 140, 0)')
+            if ( $($thisGifInfo).css('background') == 'rgb(0, 170, 231, .8)') {
+              $($thisGifInfo).css('background', 'rgb(0, 170, 231, 0)')
             } else {
-              $($thisGifInfo).css('background', 'rgb(114, 140, 140, .8)')
+              $($thisGifInfo).css('background', 'rgb(0, 170, 231, .8)')
             }
           })
         });
   })
 }
 
-// When the user scrolls the page to the bottom, load new GIFs automatically. //
+// When the user scrolls the page to the bottom, load new trending GIFs automatically. //
 var counter = 0
 $(window).scroll(function() {
     if($(window).scrollTop() + $(window).height() >= $(document).height()) {
@@ -126,3 +131,8 @@ $(window).scroll(function() {
       console.log('counter equals', counter)
     }
 });
+
+module.exports = {
+  getGifs,
+  searchGifs
+}
